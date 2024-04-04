@@ -36,7 +36,7 @@ if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
     <title>AUTENTICACIÓ AMB LDAP</title>
 </head>
 <body>
-    <a href="http://zend-damola.fjeclot.net/proyecto/index.php">Torna a la pàgina inicial</a>
+    <a href="/proyectoM08uf23/index.php">Torna a la pàgina inicial</a>
     <h2>Iniciar sesión</h2>
     <form method="post">
         <label for="adm">Admin:</label><br>
