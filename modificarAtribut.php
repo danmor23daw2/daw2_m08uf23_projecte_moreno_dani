@@ -12,37 +12,38 @@ if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
     exit();
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_POST["metodo"] == "PUT") {
     $uid = $_POST['uid'];
-    $unorg = $_POST['organizacion'];
+    $unorg = $_POST['unorg'];
     $atributo = $_POST['atributo'];
     $nuevo_valor = $_POST['nuevo_valor'];
     $dn = 'uid='.$uid.',ou='.$unorg.',dc=fjeclot,dc=net';
-
+    
     $opciones = [
         'host' => 'zend-damola.fjeclot.net',
         'username' => 'cn=admin,dc=fjeclot,dc=net',
         'password' => 'fjeclot',
         'bindRequiresDn' => true,
         'accountDomainName' => 'fjeclot.net',
-        'baseDn' => 'dc=fjeclot,dc=net',        
+        'baseDn' => 'dc=fjeclot,dc=net',
     ];
-
+    
     $ldap = new Ldap($opciones);
     $ldap->bind();
-
+    
     $entrada = $ldap->getEntry($dn);
-
+    
     if ($entrada) {
         Attribute::setAttribute($entrada, $atributo, $nuevo_valor);
         $ldap->update($dn, $entrada);
-        echo "Atributo modificado"; 
+        echo "Atributo modificado";
     } else {
         echo "<b>Aquesta entrada no existeix</b><br><br>";
     }
 } else {
-?>
-<form method="post">
+    ?>
+<form method="POST">
+	<input type="hidden" name="metodo" value="PUT">
     UID: <input type="text" name="uid"><br>
     Organizació: <input type="text" name="organizacion"><br><br>
     Atribut a modificar:<br><br>
@@ -64,3 +65,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <?php
 }
 ?>
+

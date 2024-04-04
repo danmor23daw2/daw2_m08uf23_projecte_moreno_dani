@@ -12,7 +12,7 @@ if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
     exit();
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_POST["metodo"] == "POST") {
     $uid = $_POST['uid'];
     $unorg = $_POST['organizacion'];
     $num_id = $_POST['uidNumber'];
