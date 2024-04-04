@@ -38,7 +38,7 @@ if ($_POST["metodo"] == "POST") {
 
     $domini = 'dc=fjeclot,dc=net';
     $opciones = [
-        'host' => 'zend-damola.fjeclot.net',
+        'host' => 'zends-damola.fjeclot.net',
         'username' => "cn=admin,$domini",
         'password' => 'fjeclot',
         'bindRequiresDn' => true,
@@ -73,7 +73,8 @@ if ($_POST["metodo"] == "POST") {
     }
 } else {
 ?>
-<form method="post">
+<form method="POST">
+<input type="hidden" name="metodo" value="POST">
     UID: <input type="text" name="uid"><br>
     Organización: <input type="text" name="organizacion"><br>
     uidNumber: <input type="text" name="uidNumber"><br>

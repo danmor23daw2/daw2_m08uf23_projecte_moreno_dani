@@ -14,7 +14,7 @@ if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
 
 if ($_POST["metodo"] == "PUT") {
     $uid = $_POST['uid'];
-    $unorg = $_POST['unorg'];
+    $unorg = $_POST['organizacion'];
     $atributo = $_POST['atributo'];
     $nuevo_valor = $_POST['nuevo_valor'];
     $dn = 'uid='.$uid.',ou='.$unorg.',dc=fjeclot,dc=net';

@@ -10,6 +10,6 @@
 		<h3> Autor: danmor23daw2 </h3>
 		<h3> Correu: danmor23daw2@protonmail.com</h3>
 		<h3> Github: https://github.com/danmor23daw2/daw2_m08uf23_projecte_moreno_dani</h3>
-		<a href="http://zend-damola.fjeclot.net/proyecto/login.php">Inicia sessió</a>
+		<a href="/proyectoM08uf23/login.php">Inicia sessió</a>
 	</body>
 </html>

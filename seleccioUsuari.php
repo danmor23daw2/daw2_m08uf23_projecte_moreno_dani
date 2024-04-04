@@ -38,7 +38,7 @@ MOSTRANT DADES D'USUARIS DE LA BASE DE DADES LDAP
 </head>
 <body>
 <h2>Formulari de selecció d'usuari</h2>
-<form action="http://zend-damola.fjeclot.net/zendldap" method="GET">
+<form  method="GET">
 Unitat organitzativa: <input type="text" name="ou"><br>
 Usuari: <input type="text" name="usr"><br>
 <input type="submit"/>
